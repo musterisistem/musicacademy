@@ -1,3 +1,10 @@
+"use client";
+import React from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import InnerPageHeader from '@/components/layout/InnerPageHeader';
+import styles from './Haberler.module.css';
+
 interface Haber {
     slug: string;
     title: string;
