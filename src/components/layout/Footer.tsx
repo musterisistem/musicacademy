@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Instagram, Facebook, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import styles from './Footer.module.css';
 
+import Image from 'next/image';
+
 const Footer = () => {
     return (
         <footer className={styles.footer}>
@@ -10,8 +12,14 @@ const Footer = () => {
                 <div className={styles.grid}>
                     <div className={styles.info}>
                         <div className={styles.logo}>
-                            <span className={styles.logoText}>ELENA ÇEKİÇ</span>
-                            <span className={styles.logoSub}>MUSIC ACADEMY</span>
+                            <Image
+                                src="/images/logoelena.png"
+                                alt="Elena Çekiç Müzik Akademi Logo"
+                                width={180}
+                                height={60}
+                                className={styles.logoImage}
+                                style={{ objectFit: 'contain' }}
+                            />
                         </div>
                         <p className={styles.description}>
                             Sanatın ruhunu müzikle buluşturan, profesyonel eğitim kadrosuyla geleceğin sanatçılarını yetiştiren öncü müzik akademisi.
@@ -52,7 +60,12 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.bottom}>
-                    <p>© 2026 Elena Çekiç Music Academy. Tüm Hakları Saklıdır.</p>
+                    <div className={styles.bottomContent}>
+                        <p className={styles.aboutText}>
+                            Elena Çekiç Müzik Akademi, her yaştan müziksevere dünya standartlarında eğitim sunarak, sanatı yaşamın bir parçası haline getirmeyi hedefler.
+                        </p>
+                        <p className={styles.copyright}>© 2026 Elena Çekiç Music Academy. Tüm Hakları Saklıdır.</p>
+                    </div>
                 </div>
             </div>
         </footer>

@@ -126,3 +126,28 @@
         padding-top: 60px;
     }
 }
+
+/* Yeni Eklenen Stiller */
+.logoImage {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.bottomContent {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.aboutText {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+}
