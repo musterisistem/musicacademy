@@ -1,0 +1,259 @@
+.section {
+    padding: 100px 5%;
+    background: var(--background);
+    position: relative;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+}
+
+.headerLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.headerAccent {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.headerLine {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--primary);
+    flex-shrink: 0;
+}
+
+.label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    color: #fff;
+    margin: 0;
+    line-height: 1.1;
+    font-style: normal;
+}
+
+.title em {
+    font-style: italic;
+    color: var(--primary);
+}
+
+.headerRight {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.headerStats {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.statNum {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    font-family: var(--font-serif);
+    font-style: italic;
+}
+
+.statLabel {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+}
+
+.statDivider {
+    width: 1px;
+    height: 36px;
+    background: var(--border);
+    flex-shrink: 0;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+/* Card */
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardLink {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Photo */
+.photoWrapper {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    border: 2px solid var(--border);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cardLink:hover .photoWrapper {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(196, 125, 14, 0.15);
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    /* Siyah-beyaz */
+    filter: grayscale(100%) contrast(1.05);
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+/* Renk overlay — hover'da görünür */
+.colorOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.7) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Hover içeriği */
+.hoverContent {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 18px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.btnLabel {
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--primary);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.cardLink:hover .btnLabel {
+    color: var(--primary);
+}
+
+/* Hover state */
+.cardLink:hover .photo {
+    filter: grayscale(0%) contrast(1.05);
+    transform: scale(1.05);
+}
+
+.cardLink:hover .colorOverlay {
+    opacity: 1;
+}
+
+.cardLink:hover .hoverContent {
+    opacity: 1;
+}
+
+/* Info */
+.info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.tagline {
+    font-size: 0.78rem;
+    color: var(--primary);
+    margin: 0;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 70px 5%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}

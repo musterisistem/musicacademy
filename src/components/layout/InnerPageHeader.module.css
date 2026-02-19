@@ -1,0 +1,130 @@
+.pageHeader {
+    padding: 160px 5% 40px;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+}
+
+.videoBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.4), rgba(5, 5, 5, 0.9));
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.content {
+    max-width: 100%;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+.breadcrumb a {
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--primary);
+}
+
+.separator {
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+.current {
+    color: var(--primary);
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px var(--primary-glow));
+}
+
+.description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 100%;
+}
+
+.bgDecor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.circle1 {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    opacity: 0.3;
+}
+
+.circle2 {
+    position: absolute;
+    bottom: -150px;
+    left: 20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 60%);
+    opacity: 0.2;
+}
+
+@media (max-width: 768px) {
+    .pageHeader {
+        padding: 140px 20px 60px;
+    }
+
+    .title {
+        font-size: 3.5rem;
+    }
+}

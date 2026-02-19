@@ -1,0 +1,128 @@
+.footer {
+    background: var(--secondary);
+    padding: 80px 5% 40px;
+    border-top: 1px solid var(--border);
+    color: var(--foreground);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.logoText {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    display: block;
+}
+
+.logoSub {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    color: var(--text-muted);
+    display: block;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 400px;
+    margin-bottom: 30px;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+}
+
+.socialLink {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+    background: var(--gold-gradient);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--primary-glow);
+}
+
+.links h3,
+.contact h3 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--primary);
+}
+
+.links ul {
+    list-style: none;
+}
+
+.links li {
+    margin-bottom: 12px;
+}
+
+.links a {
+    color: var(--text-muted);
+}
+
+.links a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+
+.icon {
+    color: var(--primary);
+}
+
+.bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 40px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer {
+        padding-top: 60px;
+    }
+}

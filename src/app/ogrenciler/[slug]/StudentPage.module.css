@@ -1,0 +1,155 @@
+.page {
+    background: var(--background);
+    min-height: 100vh;
+}
+
+.content {
+    padding: 80px 5% 120px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* Sol: Fotoğraf */
+.photoCol {
+    position: sticky;
+    top: 120px;
+}
+
+.photoFrame {
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 0 8px rgba(196, 125, 14, 0.1), 0 30px 60px rgba(0, 0, 0, 0.5);
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+/* Sağ: Metin */
+.textCol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.name {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3vw, 3.2rem);
+    color: #fff;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin: 0;
+    font-style: italic;
+    border-left: 3px solid var(--primary);
+    padding-left: 16px;
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+}
+
+.story p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin: 0;
+}
+
+.highlights {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 10px;
+}
+
+.highlightsTitle {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin: 0 0 20px;
+}
+
+.highlightsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.highlightsList li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.bullet {
+    color: var(--primary);
+    font-size: 0.6rem;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .photoCol {
+        position: static;
+    }
+
+    .photoFrame {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        padding: 60px 5%;
+    }
+}

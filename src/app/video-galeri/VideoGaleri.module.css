@@ -1,0 +1,145 @@
+.page {
+    background: var(--background);
+    min-height: 100vh;
+}
+
+.section {
+    padding: 70px 5% 100px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Grid: 2 sütun yatay */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+/* Card */
+.card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Player */
+.playerWrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+}
+
+.thumbnailBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.thumbnailBox:hover .thumbnail {
+    transform: scale(1.04);
+}
+
+.thumbnailPlaceholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+}
+
+.playOverlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    transition: background 0.3s ease;
+}
+
+.thumbnailBox:hover .playOverlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.playBtn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 30px rgba(196, 125, 14, 0.5);
+}
+
+.thumbnailBox:hover .playBtn {
+    transform: scale(1.12);
+    box-shadow: 0 12px 40px rgba(196, 125, 14, 0.7);
+}
+
+.videoPlayer {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
+/* Card Info */
+.cardInfo {
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.cardIndex {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 0.1em;
+    font-family: var(--font-serif);
+    font-style: italic;
+}
+
+.cardTitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 50px 4%;
+    }
+}

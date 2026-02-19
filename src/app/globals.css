@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+:root {
+  --background: #050505;
+  --foreground: #ffffff;
+  --primary: #c47d0e;
+  /* Deep Amber Gold */
+  /* Rich Deep Gold from Logo */
+  --primary-glow: rgba(196, 125, 14, 0.4);
+  --gold-gradient: linear-gradient(135deg, #f5efc3 0%, #c47d0e 45%, #9b5a00 65%, #6b3f00 100%);
+  --secondary: #0d0d0d;
+  --accent: #c47d0e;
+  --text-muted: #949494;
+  --card-bg: rgba(20, 20, 20, 0.6);
+  --border: rgba(255, 255, 255, 0.08);
+  --glass: rgba(5, 5, 5, 0.82);
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+}
+
+.gold-text {
+  background: var(--gold-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-main);
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+/* Section Spacing */
+.section-padding {
+  padding: 100px 5%;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 20px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}

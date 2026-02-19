@@ -1,0 +1,286 @@
+.aboutPage {
+    background: var(--background);
+    min-height: 100vh;
+}
+
+.section {
+    padding: 60px 5% 100px;
+    position: relative;
+}
+
+.sectionDark {
+    padding: 100px 5%;
+    background: rgba(255, 255, 255, 0.02);
+    position: relative;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.creativeGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.creativeGridReverse {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.mainText {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tag {
+    color: var(--primary);
+    letter-spacing: 0.4em;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.heading {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    color: #fff;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.gold {
+    color: var(--primary);
+}
+
+.p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+.imageLayer1 {
+    position: relative;
+    padding: 20px;
+}
+
+.creativeImg {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.experienceBadge {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    background: var(--primary);
+    background: var(--gold-gradient);
+    color: #000;
+    padding: 25px 35px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+}
+
+.badgeNum {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.badgeLabel {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.imageLayer2 {
+    position: relative;
+}
+
+.decorLine {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--primary);
+    pointer-events: none;
+    z-index: -1;
+    border-radius: 4px;
+}
+
+.sideContent {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.quoteBox {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 35px;
+    border-radius: 4px;
+    border-left: 3.5px solid var(--primary);
+}
+
+.quoteTitle {
+    color: var(--primary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.quoteText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #eee;
+    font-style: italic;
+}
+
+.serifTitle {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.methodologyGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: flex-start;
+}
+
+.methodText {
+    display: flex;
+    flex-direction: column;
+}
+
+.creativeList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.creativeList li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--foreground);
+    padding-left: 35px;
+    position: relative;
+    opacity: 0.9;
+}
+
+.creativeList li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 20px;
+    height: 1px;
+    background: var(--primary);
+}
+
+.singleImageContainer {
+    position: relative;
+    padding: 20px;
+}
+
+.decorFrame {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--primary);
+    pointer-events: none;
+    z-index: -1;
+    border-radius: 4px;
+}
+
+.finalAward {
+    margin-top: 80px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    padding-top: 60px;
+}
+
+.finalText {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-style: italic;
+    color: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+
+    .creativeGrid,
+    .creativeGridReverse,
+    .methodologyGrid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .collageContainer {
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .collageImg1,
+    .collageImg2 {
+        position: static;
+        width: 100%;
+    }
+
+    .creativeGridReverse .imageLayer2 {
+        order: 2;
+    }
+
+    .creativeGridReverse .sideContent {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .section,
+    .sectionDark {
+        padding: 60px 5%;
+    }
+
+    .heading {
+        font-size: 1.7rem;
+    }
+
+    .serifTitle {
+        font-size: 2.2rem;
+    }
+
+    .finalText {
+        font-size: 1.6rem;
+    }
+}
