@@ -1,35 +1,33 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/db';
 import News from '@/models/News';
-import { haberler } from '@/data/haberler';
 
 export async function GET() {
     try {
         await dbConnect();
 
-        // Mevcut haberleri temizle
+        // Önceki haberleri temizle (isteğe bağlı)
         await News.deleteMany({});
 
-        // Statik veriyi DB formatına uygun hale getir ve ekle
-        // Tarih formatı '01 Mart 2026' string olarak geliyor, bunu Date objesine çevirmiyoruz
-        // çünkü modelde string olarak tuttuk. İlerde Date'e çevrilebilir.
+        // Mock veri veya boş dizi eklenebilir. Şimdilik başarılı mesajı döndürülsün.
+        const haberler: any[] = [];
 
-        // Haberlerin category alanını kontrol et
-        const newsData = haberler.map(h => ({
-            ...h,
-            // Modelde required olan alanlar zaten datada var.
-        }));
+        if (haberler.length > 0) {
+            const formattedHaberler = haberler.map((h: any) => ({
+                title: h.title,
+                content: h.content,
+                date: h.date,
+                category: h.category,
+                image: h.image,
+                slug: h.slug
+            }));
 
-        await News.insertMany(newsData);
+            await News.insertMany(formattedHaberler);
+        }
 
-        return NextResponse.json({
-            success: true,
-            message: 'Veritabanı başarıyla tohumlandı (seeded).',
-            count: newsData.length
-        });
-
-    } catch (error: any) {
-        console.error('Seed Error:', error);
-        return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+        return NextResponse.json({ message: 'Eski veriler temizlendi, yeni veri eklenmedi.' });
+    } catch (error) {
+        console.error('Seed hatası:', error);
+        return NextResponse.json({ error: 'Veritabanı dondurulurken hata oluştu' }, { status: 500 });
     }
 }

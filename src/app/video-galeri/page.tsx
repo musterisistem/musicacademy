@@ -6,14 +6,14 @@ import InnerPageHeader from '@/components/layout/InnerPageHeader';
 import styles from './VideoGaleri.module.css';
 
 const videos = [
-    { src: 'https://elenacekic.b-cdn.net/videos/galeri/video-1.mp4', title: 'Konser Performansı 1' },
-    { src: 'https://elenacekic.b-cdn.net/videos/galeri/video-2.mp4', title: 'Konser Performansı 2' },
     { src: 'https://elenacekic.b-cdn.net/videos/galeri/video-3.mp4', title: 'Öğrenci Resitali 1' },
     { src: 'https://elenacekic.b-cdn.net/videos/galeri/video-4.mp4', title: 'Öğrenci Resitali 2' },
     { src: 'https://elenacekic.b-cdn.net/videos/galeri/video-5.mp4', title: 'Festival Anı 1' },
     { src: 'https://elenacekic.b-cdn.net/videos/galeri/video-6.mp4', title: 'Festival Anı 2' },
     { src: 'https://elenacekic.b-cdn.net/videos/galeri/video-7.mp4', title: 'Akademi Etkinliği 1' },
     { src: 'https://elenacekic.b-cdn.net/videos/galeri/video-8.mp4', title: 'Akademi Etkinliği 2' },
+    { src: 'https://elenacekic.b-cdn.net/videos/galeri/video-1.mp4', title: 'Konser Performansı 1' },
+    { src: 'https://elenacekic.b-cdn.net/videos/galeri/video-2.mp4', title: 'Konser Performansı 2' },
 ];
 
 function VideoCard({ video, index }: { video: typeof videos[0]; index: number }) {
@@ -97,10 +97,6 @@ function VideoCard({ video, index }: { video: typeof videos[0]; index: number })
                         autoPlay
                     />
                 )}
-            </div>
-            <div className={styles.cardInfo}>
-                <span className={styles.cardIndex}>#{String(index + 1).padStart(2, '0')}</span>
-                <h3 className={styles.cardTitle}>{video.title}</h3>
             </div>
         </motion.div>
     );

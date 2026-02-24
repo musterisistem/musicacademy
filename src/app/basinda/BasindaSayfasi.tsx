@@ -6,47 +6,18 @@ import InnerPageHeader from '@/components/layout/InnerPageHeader';
 import styles from './Basinda.module.css';
 
 const images = [
+    { id: 4, src: 'https://elenacekic.b-cdn.net/images/basinda/basinda (4).jfif', alt: 'Elena Çekiç Müzik Akademi Basın Haberi 4' },
+    { id: 6, src: '/images/basinda/habermer.png', alt: 'Elena Çekiç Müzik Akademi Basın Habermer' },
     { id: 1, src: 'https://elenacekic.b-cdn.net/images/basinda/basinda (1).jfif', alt: 'Elena Çekiç Müzik Akademi Basın Haberi 1' },
     { id: 2, src: 'https://elenacekic.b-cdn.net/images/basinda/basinda (2).jfif', alt: 'Elena Çekiç Müzik Akademi Basın Haberi 2' },
     { id: 3, src: 'https://elenacekic.b-cdn.net/images/basinda/basinda (3).jfif', alt: 'Elena Çekiç Müzik Akademi Basın Haberi 3' },
-    { id: 4, src: 'https://elenacekic.b-cdn.net/images/basinda/basinda (4).jfif', alt: 'Elena Çekiç Müzik Akademi Basın Haberi 4' },
     { id: 5, src: 'https://elenacekic.b-cdn.net/images/basinda/basinda (5).jfif', alt: 'Elena Çekiç Müzik Akademi Basın Haberi 5' },
 ];
 
 const BasindaSayfasi = () => {
     const [selectedImage, setSelectedImage] = useState<typeof images[0] | null>(null);
     const [videoStarted, setVideoStarted] = useState(false);
-    const [coverDataUrl, setCoverDataUrl] = useState<string | null>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
-    const hiddenVideoRef = useRef<HTMLVideoElement>(null);
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-
-    // Capture frame at 47s for cover
-    React.useEffect(() => {
-        const v = hiddenVideoRef.current;
-        const canvas = canvasRef.current;
-        if (!v || !canvas) return;
-
-        const onSeeked = () => {
-            const ctx = canvas.getContext('2d');
-            if (!ctx) return;
-            canvas.width = v.videoWidth;
-            canvas.height = v.videoHeight;
-            ctx.drawImage(v, 0, 0, canvas.width, canvas.height);
-            setCoverDataUrl(canvas.toDataURL('image/jpeg', 0.85));
-        };
-
-        const onMetadata = () => {
-            v.currentTime = 47;
-        };
-
-        v.addEventListener('loadedmetadata', onMetadata);
-        v.addEventListener('seeked', onSeeked);
-        return () => {
-            v.removeEventListener('loadedmetadata', onMetadata);
-            v.removeEventListener('seeked', onSeeked);
-        };
-    }, []);
 
     const handleVideoPlay = () => {
         setVideoStarted(true);
@@ -87,7 +58,7 @@ const BasindaSayfasi = () => {
                             </p>
                             <div className={styles.introMeta}>
                                 <div className={styles.metaItem}>
-                                    <span className={styles.metaNumber}>20+</span>
+                                    <span className={styles.metaNumber}>15+</span>
                                     <span className={styles.metaLabel}>Yıllık Deneyim</span>
                                 </div>
                                 <div className={styles.metaDivider} />
@@ -97,7 +68,7 @@ const BasindaSayfasi = () => {
                                 </div>
                                 <div className={styles.metaDivider} />
                                 <div className={styles.metaItem}>
-                                    <span className={styles.metaNumber}>4</span>
+                                    <span className={styles.metaNumber}>6</span>
                                     <span className={styles.metaLabel}>Uluslararası Festival</span>
                                 </div>
                             </div>
@@ -105,17 +76,6 @@ const BasindaSayfasi = () => {
 
                         {/* Sağ: Video */}
                         <div className={styles.introVideo}>
-                            {/* Hidden elements for thumbnail capture */}
-                            <video
-                                ref={hiddenVideoRef}
-                                src="https://elenacekic.b-cdn.net/videos/ntv.mp4"
-                                preload="metadata"
-                                muted
-                                playsInline
-                                style={{ display: 'none' }}
-                            />
-                            <canvas ref={canvasRef} style={{ display: 'none' }} />
-
                             <div className={styles.videoWrapper}>
                                 {videoStarted ? (
                                     <video
@@ -128,13 +88,11 @@ const BasindaSayfasi = () => {
                                     />
                                 ) : (
                                     <div className={styles.videoThumb} onClick={handleVideoPlay}>
-                                        {coverDataUrl && (
-                                            <img
-                                                src={coverDataUrl}
-                                                alt="NTV Haberi Kapak"
-                                                className={styles.videoCover}
-                                            />
-                                        )}
+                                        <img
+                                            src="/images/onizleme.png"
+                                            alt="NTV Haberi Kapak"
+                                            className={styles.videoCover}
+                                        />
                                         <div className={styles.videoPlayBtn}>
                                             <Play size={36} fill="currentColor" />
                                         </div>

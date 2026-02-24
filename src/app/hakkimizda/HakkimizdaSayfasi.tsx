@@ -42,7 +42,7 @@ const HakkimizdaSayfasi = () => {
                             viewport={{ once: true }}
                             className={styles.imageLayer1}
                         >
-                            <img src="https://elenacekic.b-cdn.net/images/hakkimizda1.jfif" alt="Akademi Atmosferi" className={styles.creativeImg} />
+                            <img src="/images/hakkimizda.jfif" alt="Akademi Atmosferi" className={styles.creativeImg} />
                             <div className={styles.experienceBadge}>
                                 <span className={styles.badgeNum}>15+</span>
                                 <span className={styles.badgeLabel}>Yıllık Tecrübe</span>

@@ -3,7 +3,6 @@ import About from "@/components/home/About";
 import Students from "@/components/home/Students";
 import Education from "@/components/home/Education";
 import Gallery from "@/components/home/Gallery";
-import Blog from "@/components/home/Blog";
 
 import { Metadata } from 'next';
 
@@ -70,7 +69,6 @@ export default function Home() {
       <Students />
       <Education />
       <Gallery />
-      <Blog />
     </>
   );
 }

@@ -1,44 +1,23 @@
 ﻿"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Music } from 'lucide-react';
 import Link from 'next/link';
 import styles from './Education.module.css';
 
-const programs = [
-    {
-        id: "01",
-        title: "Piyano Eğitimi",
-        category: "PIYANO",
-        description: "Klasik ve modern tekniklerle profesyonel eğitim.",
-        image: "https://elenacekic.b-cdn.net/images/piano.jpg",
-        href: "/egitim-alanlari/piyano"
-    },
-    {
-        id: "02",
-        title: "Keman & Yaylılar",
-        category: "KEMAN",
-        description: "Estetik tınılar ve teknik disiplin bir arada.",
-        image: "https://elenacekic.b-cdn.net/images/keman.jpg",
-        href: "/egitim-alanlari/keman"
-    },
-    {
-        id: "03",
-        title: "Şan & Vokal",
-        category: "SES",
-        description: "Sesinizi doğru tekniklerle özgür hissettirin.",
-        image: "https://elenacekic.b-cdn.net/images/vokal.jpg",
-        href: "/egitim-alanlari/san-vokal"
-    },
-    {
-        id: "04",
-        title: "Müzik Teorisi",
-        category: "TEORİ",
-        description: "Müziğin temellerini ve tasarımını öğrenin.",
-        image: "https://elenacekic.b-cdn.net/images/teori.jpg",
-        href: "/egitim-alanlari/muzik-teorisi"
-    }
-];
+const pianoProgram = {
+    id: "01",
+    title: "Piyano Eğitimi",
+    category: "PIYANO EĞİTİMİ",
+    description: "Elena Çekiç Music Academy'de piyano eğitimi, nota okumanın ötesine geçerek enstrümanla derin bir bağ kurmayı hedefler. Hem klasik temelleri hem de modern teknikleri birleştiren bu yolculukta, müziği hissederek öğrenmenin ayrıcalığını yaşayın.",
+    features: [
+        "Uluslararası standartlarda müfredat",
+        "Kişiye özel gelişim takibi",
+        "Sahne ve performans deneyimi"
+    ],
+    image: "/images/elena_cekic.jpg",
+    href: "/egitim-alanlari/piyano"
+};
 
 const Education = () => {
     return (
@@ -67,34 +46,80 @@ const Education = () => {
                     </div>
                 </div>
 
-                <div className={styles.grid}>
-                    {programs.map((program, index) => (
-                        <Link href={program.href} key={program.id}>
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1, duration: 0.6 }}
-                                viewport={{ once: true }}
-                                className={styles.card}
-                            >
-                                <div className={styles.imageBox}>
-                                    <img src={program.image} alt={program.title} className={styles.cardImage} />
-                                    <div className={styles.overlay} />
-                                    <div className={styles.index}>{program.id}</div>
-                                </div>
+                <div className={styles.creativeWrapper}>
+                    <Link href={pianoProgram.href} className={styles.creativeCard}>
+                        {/* Background Image Area */}
+                        <div className={styles.imageSection}>
+                            <img src={pianoProgram.image} alt={pianoProgram.title} className={styles.image} />
+                            <div className={styles.imageOverlay} />
+                            <div className={styles.floatingBadge}>
+                                <Music size={24} className={styles.badgeIcon} />
+                                <span>Masterclass</span>
+                            </div>
+                        </div>
 
-                                <div className={styles.content}>
-                                    <div className={styles.contentHeader}>
-                                        <span className={styles.category}>{program.category}</span>
-                                        <ArrowUpRight size={20} className={styles.icon} />
-                                    </div>
-                                    <h3 className={styles.cardTitle}>{program.title}</h3>
-                                    <p className={styles.description}>{program.description}</p>
-                                    <div className={styles.hoverLine} />
+                        {/* Content Area */}
+                        <div className={styles.contentSection}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.3 }}
+                                className={styles.contentHeader}
+                            >
+                                <span className={styles.category}>{pianoProgram.category}</span>
+                                <span className={styles.index}>{pianoProgram.id}</span>
+                            </motion.div>
+
+                            <motion.h3
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.4 }}
+                                className={styles.cardTitle}
+                            >
+                                {pianoProgram.title}
+                            </motion.h3>
+
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.5 }}
+                                className={styles.description}
+                            >
+                                {pianoProgram.description}
+                            </motion.p>
+
+                            <motion.ul
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.6 }}
+                                className={styles.featureList}
+                            >
+                                {pianoProgram.features.map((feature, idx) => (
+                                    <li key={idx}>
+                                        <div className={styles.bullet} />
+                                        {feature}
+                                    </li>
+                                ))}
+                            </motion.ul>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.7 }}
+                                className={styles.actionWrapper}
+                            >
+                                <span className={styles.exploreText}>Eğitimi Keşfet</span>
+                                <div className={styles.iconCircle}>
+                                    <ArrowUpRight size={24} className={styles.actionIcon} />
                                 </div>
                             </motion.div>
-                        </Link>
-                    ))}
+                        </div>
+                    </Link>
                 </div>
             </div>
         </section>

@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import styles from './InnerPageHeader.module.css';
 
 interface InnerPageHeaderProps {
@@ -11,6 +12,9 @@ interface InnerPageHeaderProps {
 }
 
 const InnerPageHeader: React.FC<InnerPageHeaderProps> = ({ title, breadcrumb, description }) => {
+    const pathname = usePathname();
+    const isFestivalPage = pathname === '/etkinlikler' || pathname === '/basvurular';
+
     return (
         <section className={styles.pageHeader}>
             <div className={styles.container}>
@@ -32,15 +36,26 @@ const InnerPageHeader: React.FC<InnerPageHeaderProps> = ({ title, breadcrumb, de
 
             {/* Video Background */}
             <div className={styles.videoBg}>
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className={styles.video}
-                >
-                    <source src="https://elenacekic.b-cdn.net/videos/header-bg.mp4" type="video/mp4" />
-                </video>
+                {isFestivalPage ? (
+                    <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className={styles.video}
+                    >
+                        <source src="https://elenacekic.b-cdn.net/videos/header-bg.mp4" type="video/mp4" />
+                    </video>
+                ) : (
+                    <iframe
+                        src="https://www.youtube.com/embed/aQLOg5sfmeo?autoplay=1&mute=1&controls=0&start=190&end=215&loop=1&playlist=aQLOg5sfmeo&rel=0&showinfo=0"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        className={styles.video}
+                        style={{ pointerEvents: 'none', width: '100vw', height: '56.25vw', minHeight: '100vh', minWidth: '177.77vh', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', objectFit: 'cover' }}
+                    ></iframe>
+                )}
                 <div className={styles.overlay}></div>
             </div>
 

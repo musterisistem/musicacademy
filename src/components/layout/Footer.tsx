@@ -25,9 +25,10 @@ const Footer = () => {
                             Sanatın ruhunu müzikle buluşturan, profesyonel eğitim kadrosuyla geleceğin sanatçılarını yetiştiren öncü müzik akademisi.
                         </p>
                         <div className={styles.socials}>
-                            <a href="#" className={styles.socialLink}><Instagram size={20} /></a>
-                            <a href="#" className={styles.socialLink}><Facebook size={20} /></a>
-                            <a href="#" className={styles.socialLink}><Youtube size={20} /></a>
+                            <a href="https://www.instagram.com/elena_cekic/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} title="Instagram"><Instagram size={20} /></a>
+                            <a href="https://www.facebook.com/p/Elena-%C3%87eki%C3%A7-Music-Academy-100063678993638/?locale=tr_TR" target="_blank" rel="noopener noreferrer" className={styles.socialLink} title="Facebook"><Facebook size={20} /></a>
+                            <a href="https://yandex.com.tr/maps/org/elena_cekic_music_academy/235907720790/?ll=28.906492%2C40.234583&z=17.02" target="_blank" rel="noopener noreferrer" className={styles.socialLink} title="Haritada Gör"><MapPin size={20} /></a>
+                            <a href="#" className={styles.socialLink} title="Youtube"><Youtube size={20} /></a>
                         </div>
                     </div>
 
@@ -50,7 +51,7 @@ const Footer = () => {
                         </div>
                         <div className={styles.contactItem}>
                             <Mail size={18} className={styles.icon} />
-                            <span>info@elenacekicmuzikakademi.com</span>
+                            <span>elenacekic_@hotmail.com</span>
                         </div>
                         <div className={styles.contactItem}>
                             <MapPin size={18} className={styles.icon} />

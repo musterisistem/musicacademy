@@ -24,22 +24,6 @@ const Students = () => {
                         <p className={styles.subtitle}>
                             Avrupa'dan Amerika'ya, Orta Doğu'dan Asya'ya uzanan sahnelerde Türkiye'yi, Bursa'yı ve Türk gençliğinin sanatsal gücünü temsil eden genç yetenekler.
                         </p>
-                        <div className={styles.headerStats}>
-                            <div className={styles.statItem}>
-                                <span className={styles.statNum}>5</span>
-                                <span className={styles.statLabel}>Başarılı Öğrenci</span>
-                            </div>
-                            <div className={styles.statDivider} />
-                            <div className={styles.statItem}>
-                                <span className={styles.statNum}>4</span>
-                                <span className={styles.statLabel}>Kıta</span>
-                            </div>
-                            <div className={styles.statDivider} />
-                            <div className={styles.statItem}>
-                                <span className={styles.statNum}>∞</span>
-                                <span className={styles.statLabel}>İlham</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
 

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play } from 'lucide-react';
+import Link from 'next/link';
 import styles from './HeroSlider.module.css';
 
 const slides = [
@@ -10,7 +11,7 @@ const slides = [
         title: "Sanatın Kalbine Yolculuk",
         category: "ELENA ÇEKİÇ MUSIC ACADEMY",
         description: "Müziğin ruhuna dokunan, akademik disiplinle harmanlanmış profesyonel eğitim süreci.",
-        image: "https://elenacekic.b-cdn.net/images/slider1.jfif",
+        image: "/slider/1.jfif",
         year: "2026"
     },
     {
@@ -18,7 +19,7 @@ const slides = [
         title: "Yeteneklerinizi Keşfedin",
         category: "AKADEMİK EĞİTİM",
         description: "Piyano, keman ve şan eğitimlerimizde her öğrencinin benzersiz yeteneğini parlatıyoruz.",
-        image: "https://elenacekic.b-cdn.net/images/slider2.jfif",
+        image: "/slider/2.jpeg",
         year: "PRO"
     },
     {
@@ -26,7 +27,7 @@ const slides = [
         title: "Geleceğin Sanatçıları",
         category: "MÜZİK ATÖLYELERİ",
         description: "Modern teknikler ve klasik temel ile geleceğin virtüözlerini yetiştiriyoruz.",
-        image: "https://elenacekic.b-cdn.net/images/slider3.jfif",
+        image: "/slider/3.jfif",
         year: "NEW"
     }
 ];
@@ -37,7 +38,7 @@ const HeroSlider = () => {
     const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
 
     useEffect(() => {
-        const timer = setInterval(nextSlide, 8000);
+        const timer = setInterval(nextSlide, 5000);
         return () => clearInterval(timer);
     }, []);
 
@@ -126,11 +127,13 @@ const HeroSlider = () => {
                                 transition={{ delay: 1.2 }}
                                 className={styles.actions}
                             >
-                                <button className={styles.mainBtn}>Hemen Başla</button>
-                                <button className={styles.playBtn}>
+                                <Link href="/hakkimizda" className={styles.mainBtn}>
+                                    Hakkımızda
+                                </Link>
+                                <Link href="/video-galeri" className={styles.playBtn}>
                                     <Play size={20} fill="currentColor" />
-                                    <span>Dinle</span>
-                                </button>
+                                    <span>Video Galeri</span>
+                                </Link>
                             </motion.div>
                         </div>
                     </div>
@@ -143,7 +146,7 @@ const HeroSlider = () => {
                                 <motion.div
                                     initial={{ width: 0 }}
                                     animate={{ width: "100%" }}
-                                    transition={{ duration: 8, ease: "linear" }}
+                                    transition={{ duration: 5, ease: "linear" }}
                                     className={styles.progressFill}
                                 />
                             </div>

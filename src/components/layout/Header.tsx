@@ -13,9 +13,6 @@ const menuItems = [
     href: '/egitim-alanlari',
     subItems: [
       { name: 'Piyano Eğitimi', href: '/egitim-alanlari/piyano' },
-      { name: 'Keman & Yaylılar', href: '/egitim-alanlari/keman' },
-      { name: 'Şan & Vokal', href: '/egitim-alanlari/san-vokal' },
-      { name: 'Müzik Teorisi', href: '/egitim-alanlari/muzik-teorisi' }
     ]
   },
   {
@@ -34,7 +31,6 @@ const menuItems = [
       { name: 'Foto Galeri', href: '/foto-galeri' }
     ]
   },
-  { name: 'Haberler', href: '/haberler' },
   { name: 'İletişim', href: '/iletisim' },
 ];
 
@@ -69,9 +65,10 @@ const Header = () => {
               BAŞVURU FORMU
             </Link>
             <div className={styles.topIconGroup}>
-              <a href="#"><Instagram size={14} /></a>
-              <a href="#"><Facebook size={14} /></a>
-              <a href="#"><Youtube size={14} /></a>
+              <a href="https://www.instagram.com/elena_cekic/" target="_blank" rel="noopener noreferrer" title="Instagram"><Instagram size={14} /></a>
+              <a href="https://www.facebook.com/p/Elena-%C3%87eki%C3%A7-Music-Academy-100063678993638/?locale=tr_TR" target="_blank" rel="noopener noreferrer" title="Facebook"><Facebook size={14} /></a>
+              <a href="https://yandex.com.tr/maps/org/elena_cekic_music_academy/235907720790/?ll=28.906492%2C40.234583&z=17.02" target="_blank" rel="noopener noreferrer" title="Yandex Maps"><MapPin size={14} /></a>
+              <a href="#" aria-label="Youtube"><Youtube size={14} /></a>
             </div>
           </div>
         </div>
