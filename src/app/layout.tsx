@@ -4,7 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://elenacekic.com'),
+  metadataBase: new URL('https://elenacekicmuzikakademi.com'),
   title: {
     default: 'Elena Çekiç Music Academy | Bursa Müzik Kursu - Piyano, Keman, Şan',
     template: '%s | Elena Çekiç Music Academy'
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Elena Çekiç Music Academy | Profesyonel Müzik Eğitimi',
     description: 'Bursa\'da uluslararası standartlarda müzik eğitimi. Piyano, keman ve şan dersleriyle yeteneğinizi keşfedin.',
-    url: 'https://elenacekic.com',
+    url: 'https://elenacekicmuzikakademi.com',
     siteName: 'Elena Çekiç Music Academy',
     images: [
       {

@@ -12,11 +12,7 @@ export async function GET(request: Request) {
         '/basvurular',
         '/foto-galeri',
         '/video-galeri',
-        '/haberler',
         '/egitim-alanlari/piyano',
-        '/egitim-alanlari/keman',
-        '/egitim-alanlari/san-vokal',
-        '/egitim-alanlari/muzik-teorisi',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date().toISOString(),

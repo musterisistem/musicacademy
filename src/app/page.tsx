@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Elena Çekiç Music Academy | Bursa Müzik ve Sanat Okulu',
   description: 'Bursa Nilüfer\'de piyano, keman, şan ve müzik teorisi eğitimi veren Elena Çekiç Music Academy. Uluslararası festivaller ve sertifika programları.',
   alternates: {
-    canonical: 'https://elenacekic.com',
+    canonical: 'https://elenacekicmuzikakademi.com',
   },
 };
 
