@@ -79,7 +79,7 @@ const PiyanoSayfasi = () => {
                                 </p>
                             </div>
                             <div className={styles.transitionText}>
-                                <h3 className={styles.serifTitle}>Akademik Metotlar</h3>
+                                <h3 className={styles.serifTitle}>Akademik Metodlar</h3>
                                 <p className={styles.p}>
                                     Elena Çekiç'in 15 yılı aşkın tecrübesiyle şekillenen eğitim programımızda, her öğrencinin hızı ve karakteri bizim için özeldir. Amacımız sadece parmakları hızlandırmak değil, müziği anlayan ve yaşayan bireyler yetiştirmektir.
                                 </p>

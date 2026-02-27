@@ -51,11 +51,11 @@ const Footer = () => {
                         </div>
                         <div className={styles.contactItem}>
                             <Mail size={18} className={styles.icon} />
-                            <span>elenacekic_@hotmail.com</span>
+                            <span>elena_cekic@hotmail.com</span>
                         </div>
                         <div className={styles.contactItem}>
                             <MapPin size={18} className={styles.icon} />
-                            <span>19 Mayıs, Heybetli Sokak No:30/B Nilüfer/Bursa</span>
+                            <span>19 Mayıs mahallesi Aziz Nesin Cd No:30/B Nilüfer Bursa</span>
                         </div>
                     </div>
                 </div>

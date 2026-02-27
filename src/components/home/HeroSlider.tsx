@@ -18,7 +18,7 @@ const slides = [
         id: 2,
         title: "Yeteneklerinizi Keşfedin",
         category: "AKADEMİK EĞİTİM",
-        description: "Piyano, keman ve şan eğitimlerimizde her öğrencinin benzersiz yeteneğini parlatıyoruz.",
+        description: "Piyano eğitimimizde her öğrencinin benzersiz yeteneğini parlatıyoruz.",
         image: "/slider/2.jpeg",
         year: "PRO"
     },

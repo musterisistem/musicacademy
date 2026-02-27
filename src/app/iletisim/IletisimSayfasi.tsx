@@ -68,7 +68,7 @@ const IletisimSayfasi = () => {
                                 </div>
                                 <div className={styles.infoDetails}>
                                     <h3>Adres</h3>
-                                    <p>19 Mayıs, Heybetli Sokak No:30/B 16120 Nilüfer/Bursa</p>
+                                    <p>19 Mayıs mahallesi Aziz Nesin Cd No:30/B Nilüfer Bursa</p>
                                 </div>
                             </div>
 
@@ -88,7 +88,7 @@ const IletisimSayfasi = () => {
                                 </div>
                                 <div className={styles.infoDetails}>
                                     <h3>E-posta</h3>
-                                    <p>elenacekic_@hotmail.com</p>
+                                    <p>elena_cekic@hotmail.com</p>
                                 </div>
                             </div>
 

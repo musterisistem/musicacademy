@@ -16,11 +16,14 @@ const menuItems = [
     ]
   },
   {
-    name: 'Etkinlikler',
+    name: 'Genç Yıldızlar',
     href: '/etkinlikler',
     subItems: [
       { name: 'Festivaller', href: '/etkinlikler' },
       { name: 'Başvurular', href: '/basvurular' },
+      { name: 'Galeri', href: '/genc-yildizlar/galeri' },
+      { name: 'Jüri', href: '/genc-yildizlar/juri' },
+      { name: 'Sanatçılar', href: '/genc-yildizlar/sanatcilar' }
     ]
   },
   {
@@ -53,7 +56,7 @@ const Header = () => {
           <div className={styles.topInfo}>
             <div className={styles.topItem}>
               <MapPin size={14} className={styles.topIcon} />
-              <span>19 Mayıs, Heybetli Sokak No:30/B 16120 Nilüfer/Bursa</span>
+              <span>19 Mayıs mahallesi Aziz Nesin Cd No:30/B Nilüfer Bursa</span>
             </div>
             <div className={styles.topItem}>
               <Phone size={14} className={styles.topIcon} />

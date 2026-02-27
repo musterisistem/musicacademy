@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_K4dAzWaw_GygWNySHTHhkhwRCikcp1asa');
 const fromEmail = process.env.RESEND_FROM_EMAIL || 'info@elenacekicmuzikakademi.com';
-const adminEmail = process.env.CONTACT_RECEIVER_EMAIL || 'elenacekic_@hotmail.com';
+const adminEmail = process.env.CONTACT_RECEIVER_EMAIL || 'elena_cekic@hotmail.com';
 
 export async function POST(req: Request) {
     try {
