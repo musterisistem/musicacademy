@@ -36,9 +36,10 @@ const Footer = () => {
                         <h3>Hızlı Linkler</h3>
                         <ul>
                             <li><Link href="/hakkimizda">Hakkımızda</Link></li>
-                            <li><Link href="/akademik">Akademik</Link></li>
                             <li><Link href="/egitim-alanlari">Eğitim Alanları</Link></li>
-                            <li><Link href="/galeri">Galeri</Link></li>
+                            <li><Link href="/etkinlikler">Etkinlikler</Link></li>
+                            <li><Link href="/foto-galeri">Foto Galeri</Link></li>
+                            <li><Link href="/video-galeri">Video Galeri</Link></li>
                             <li><Link href="/iletisim">İletişim</Link></li>
                         </ul>
                     </div>
