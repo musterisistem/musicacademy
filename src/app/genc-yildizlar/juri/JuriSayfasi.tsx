@@ -23,6 +23,15 @@ Elena Cekic, Amerika Birleşik Devletleri, İspanya, İtalya, Malta, Rusya, Tür
     },
     {
         id: 2,
+        name: "Ahmet Levent Atlier",
+        role: "Piyano Öğretmeni & Jüri Üyesi",
+        image: "/images/juri/ali1.jpeg",
+        bio: `1971 doğumlu olan Ahmet Levent Atlier, piyano eğitimine Sibel Kurtbey ile başladı. İlerleyen yıllarda Dilek Yonat ve Ali Darman ile piyano çalışmalarını sürdüren Atlier, 1999 yılından beri müzik öğretmenliği ve piyano öğretmenliği yapmaktadır.
+
+Bu yıl 8.'si düzenlenecek IPC Piyano Yarışması'nın kurucusu ve yarışma direktörüdür.`
+    },
+    {
+        id: 4,
         name: "İnna Tosun",
         role: "Piyano Eğitmeni & Jüri Üyesi",
         image: "/images/juri/innatosun.jpeg",
@@ -33,7 +42,7 @@ Mozart Akademisi Uluslararası Piyano Festivali’nde jüri üyeliği yaptı. Ay
 Yılların pedagojik piyano eğitimi deneyimiyle yetiştirdiği piyano öğrencileri, katıldıkları konserlerde, festivallerde ve sınavlarda başarılı sonuçlar elde ettiler. Şu anda Mozart Akademisi’nde piyano öğretmeni olarak çalışmalarına devam etmektedir.`
     },
     {
-        id: 3,
+        id: 5,
         name: "Mihail Pyankov",
         role: "Sanat Yönetmeni & Öğretim Görevlisi",
         image: "/images/juri/mihailpyankov.jpeg",
