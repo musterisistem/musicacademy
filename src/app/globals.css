@@ -102,3 +102,35 @@ button {
 .fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
+
+/* ====================================================
+   GOOGLE TRANSLATE OVERRIDES (AGGRESSIVE)
+   ==================================================== */
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.skiptranslate>iframe.skiptranslate,
+body>.skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+body,
+html {
+  top: 0px !important;
+  position: relative !important;
+  margin-top: 0px !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}

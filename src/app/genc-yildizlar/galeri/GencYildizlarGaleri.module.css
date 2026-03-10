@@ -1,0 +1,246 @@
+.page {
+    min-height: 100vh;
+    background-color: #0a0a0a;
+}
+
+.gallerySection {
+    padding: 60px 20px 100px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Filtre Butonları */
+.filterContainer {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filterBtn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filterBtn:hover {
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.filterBtn.active {
+    background: #d4af37;
+    color: #111;
+    border-color: #d4af37;
+    font-weight: 600;
+}
+
+/* Galeri Grid */
+.galleryGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.mediaCard {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    flex: 1 1 300px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Resim ve Thumnail Ayarları */
+.galleryImg,
+.thumbnailImg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mediaCard:hover .galleryImg,
+.mediaCard:hover .thumbnailImg {
+    transform: scale(1.08);
+}
+
+/* Overlay (Hover efekti) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.mediaCard:hover .overlay {
+    opacity: 1;
+}
+
+.playIcon,
+.zoomIcon {
+    color: #d4af37;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mediaCard:hover .playIcon,
+.mediaCard:hover .zoomIcon {
+    transform: scale(1);
+}
+
+/* Modal (Lightbox) */
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10000;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.closeBtn:hover {
+    color: #d4af37;
+    transform: rotate(90deg);
+}
+
+.navBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+}
+
+.navBtn:hover {
+    background: #d4af37;
+    color: #111;
+    border-color: #d4af37;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prevBtn {
+    left: 30px;
+}
+
+.nextBtn {
+    right: 30px;
+}
+
+.modalContent {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalImage {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.modalVideo {
+    width: 100%;
+    max-width: 1200px;
+    max-height: 90vh;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    background: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filterContainer {
+        gap: 10px;
+    }
+
+    .filterBtn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .mediaCard {
+        height: 250px;
+    }
+
+    .closeBtn {
+        top: 15px;
+        right: 15px;
+    }
+
+    .navBtn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .prevBtn {
+        left: 10px;
+    }
+
+    .nextBtn {
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mediaCard {
+        flex: 1 1 100%;
+        height: 300px;
+    }
+}

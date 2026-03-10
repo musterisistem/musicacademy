@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import FeaturesCarousel from "@/components/common/FeaturesCarousel";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://elenacekicmuzikakademi.com'),
@@ -50,6 +51,9 @@ export const metadata: Metadata = {
     shortcut: '/icon.png',
     apple: '/icon.png',
   },
+  verification: {
+    google: 'wvBWhbSRah9wr_HPZP-QBovj3F2yAf39n1GgcP-pTIU',
+  },
 };
 
 export default function RootLayout({
@@ -62,6 +66,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Header />
         <main>{children}</main>
+        <FeaturesCarousel />
         <Footer />
       </body>
     </html>

@@ -1,0 +1,38 @@
+.langWrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    margin-left: 10px;
+}
+
+.langGroup {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.langBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    line-height: 0;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(40%) opacity(0.85);
+}
+
+.langBtn:hover {
+    transform: scale(1.15);
+    filter: grayscale(0%) opacity(1);
+}
+
+.flagIcon {
+    width: 22px;
+    height: 16px;
+    border-radius: 2px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}

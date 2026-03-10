@@ -1,11 +1,11 @@
 import React from 'react';
-import GencYildizlarPlaceholder from '@/components/genc-yildizlar/GencYildizlarPlaceholder';
+import GencYildizlarGaleri from './GencYildizlarGaleri';
 
 export const metadata = {
     title: 'Genç Yıldızlar Galeri | Elena Çekiç Music Academy',
-    description: 'Genç Yıldızlar Galeri sayfası yapım aşamasındadır. Yakında içerikler eklenecektir.',
+    description: 'Genç Yıldızlar Festivali fotoğraf ve video galerisi.',
 };
 
 export default function GencYildizlarGaleriPage() {
-    return <GencYildizlarPlaceholder title="GALERİ" breadcrumb="Genç Yıldızlar / Galeri" />;
+    return <GencYildizlarGaleri />;
 }

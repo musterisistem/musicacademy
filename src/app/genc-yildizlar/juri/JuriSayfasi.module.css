@@ -1,0 +1,295 @@
+.page {
+    min-height: 100vh;
+    background-color: #0a0a0a;
+}
+
+.juriSection {
+    padding: 80px 20px 120px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.juriGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Juri Card */
+.juriCard {
+    background: linear-gradient(145deg, #111 0%, #151515 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.juriCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.imageWrapper {
+    width: 100%;
+    aspect-ratio: 1/1.1;
+    position: relative;
+    overflow: hidden;
+}
+
+.juriImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.7s ease;
+}
+
+.juriCard:hover .juriImage {
+    transform: scale(1.08);
+}
+
+.imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.juriCard:hover .imageOverlay {
+    opacity: 1;
+}
+
+.readMoreBtn {
+    background: rgba(212, 175, 55, 0.9);
+    color: #111;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.juriCard:hover .readMoreBtn {
+    transform: translateY(0);
+}
+
+.juriInfo {
+    padding: 24px 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(16, 16, 16, 1), rgba(16, 16, 16, 0.8));
+    position: relative;
+    z-index: 3;
+    border-top: 2px solid #d4af37;
+}
+
+.juriName {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.juriRole {
+    font-size: 0.9rem;
+    color: #d4af37;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Modal Styles */
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modalContent {
+    background: #111;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    border-radius: 16px;
+    overflow-y: auto;
+    position: relative;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Custom Scrollbar for Modal */
+.modalContent::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modalContent::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 0 16px 16px 0;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 8px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.closeBtn:hover {
+    background: #d4af37;
+    color: #111;
+    transform: rotate(90deg);
+}
+
+.modalLayout {
+    display: flex;
+    flex-direction: row;
+}
+
+.modalImageCol {
+    flex: 0 0 40%;
+    position: relative;
+}
+
+.modalImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.modalAward {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: #111;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #d4af37;
+}
+
+.awardIcon {
+    color: #d4af37;
+    width: 30px;
+    height: 30px;
+}
+
+.modalTextCol {
+    flex: 1;
+    padding: 50px 40px;
+}
+
+.modalName {
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0 0 5px 0;
+}
+
+.modalRole {
+    font-size: 1.1rem;
+    color: #d4af37;
+    margin: 0 0 20px 0;
+    font-weight: 500;
+}
+
+.divider {
+    height: 2px;
+    width: 60px;
+    background: #d4af37;
+    margin-bottom: 25px;
+}
+
+.modalBio {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.modalBio p {
+    margin-bottom: 16px;
+}
+
+.modalBio p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .juriGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .juriGrid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .modalLayout {
+        flex-direction: column;
+    }
+
+    .modalImageCol {
+        height: 300px;
+    }
+
+    .modalAward {
+        bottom: -25px;
+        right: 20px;
+    }
+
+    .modalTextCol {
+        padding: 40px 25px 30px;
+    }
+}

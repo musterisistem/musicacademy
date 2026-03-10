@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Instagram, Facebook, Youtube, Phone, MapPin, ChevronDown } from 'lucide-react';
+import LanguageSwitcher from '@/components/common/LanguageSwitcher';
 import styles from './Header.module.css';
 
 const menuItems = [
@@ -19,7 +20,7 @@ const menuItems = [
     name: 'Genç Yıldızlar',
     href: '/etkinlikler',
     subItems: [
-      { name: 'Festivaller', href: '/etkinlikler' },
+      { name: 'Festival Hakkında', href: '/etkinlikler' },
       { name: 'Başvurular', href: '/basvurular' },
       { name: 'Galeri', href: '/genc-yildizlar/galeri' },
       { name: 'Jüri', href: '/genc-yildizlar/juri' },
@@ -73,6 +74,9 @@ const Header = () => {
               <a href="https://yandex.com.tr/maps/org/elena_cekic_music_academy/235907720790/?ll=28.906492%2C40.234583&z=17.02" target="_blank" rel="noopener noreferrer" title="Yandex Maps"><MapPin size={14} /></a>
               <a href="#" aria-label="Youtube"><Youtube size={14} /></a>
             </div>
+
+            <LanguageSwitcher />
+
           </div>
         </div>
       </div>

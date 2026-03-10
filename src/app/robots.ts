@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: '/private/',
+            disallow: ['/api/*'],
         },
-        sitemap: 'https://elenacekic.com/sitemap.xml',
+        sitemap: 'https://elenacekicmuzikakademi.com/sitemap.xml',
     };
 }

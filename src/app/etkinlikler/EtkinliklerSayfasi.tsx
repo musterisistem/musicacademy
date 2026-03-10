@@ -9,9 +9,9 @@ export default function EtkinliklerSayfasi() {
     return (
         <div className={styles.page}>
             <InnerPageHeader
-                title="FESTİVALLER"
-                breadcrumb="Festivaller"
-                description="Elena Çekiç Music Academy'nin düzenlediği uluslararası müzik festivalleri."
+                title="GENÇ YILDIZLAR MÜZİK FESTİVALİ"
+                breadcrumb="Genç Yıldızlar / Festival Hakkında"
+                description="Elena Çekiç Music Academy'nin düzenlediği uluslararası müzik festivali."
             />
 
             <section className={styles.section}>
@@ -19,7 +19,7 @@ export default function EtkinliklerSayfasi() {
                     {/* Hero / Action Area */}
                     <div className={styles.actionHeader}>
                         <div className={styles.actionContent}>
-                            <h2>2026 Elena Çekiç Müzik Festivali</h2>
+                            <h2>2026 Genç Yıldızlar Müzik Festivali</h2>
                             <p>Büyük sahne heyecanını yaşamak ve uluslararası standartlarda bir performans sergilemek için hemen başvurun.</p>
                         </div>
                         <Link href="/basvurular" className={styles.applyBtn}>
