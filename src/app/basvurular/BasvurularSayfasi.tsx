@@ -96,6 +96,8 @@ export default function BasvurularSayfasi() {
         }
     };
 
+    const IS_APPLICATION_OPEN = false; // Formu açmak için bunu true yapın
+
     return (
         <div className={styles.page}>
             <InnerPageHeader
@@ -139,14 +141,50 @@ export default function BasvurularSayfasi() {
                         )}
                     </AnimatePresence>
 
-                    <motion.form
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className={styles.formContainer}
-                        onSubmit={handleSubmit}
-                    >
+                    <div style={{ position: 'relative' }}>
+                        {!IS_APPLICATION_OPEN && (
+                            <div style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '100%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                backgroundColor: 'rgba(255, 255, 255, 0.4)',
+                                zIndex: 10,
+                                borderRadius: '12px',
+                                backdropFilter: 'blur(2px)'
+                            }}>
+                                <div style={{
+                                    backgroundColor: '#fff',
+                                    padding: '30px 40px',
+                                    borderRadius: '12px',
+                                    boxShadow: '0 10px 40px rgba(0,0,0,0.15)',
+                                    textAlign: 'center',
+                                    border: '2px solid #D4AF37',
+                                    maxWidth: '80%'
+                                }}>
+                                    <h2 style={{ color: '#000', margin: 0, fontSize: '24px', fontWeight: 'bold' }}>
+                                        BAŞVURU SÜRESİ DOLMUŞTUR
+                                    </h2>
+                                    <p style={{ color: '#666', marginTop: '10px', fontSize: '18px', fontWeight: '500' }}>
+                                        İLGİNİZE TEŞEKKÜR EDERİZ
+                                    </p>
+                                </div>
+                            </div>
+                        )}
+
+                        <motion.form
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                            className={styles.formContainer}
+                            onSubmit={handleSubmit}
+                            style={!IS_APPLICATION_OPEN ? { opacity: 0.4, pointerEvents: 'none', filter: 'grayscale(50%)' } : {}}
+                        >
                         {status === 'error' && (
                             <div style={{ background: 'rgba(255, 68, 68, 0.1)', color: '#ff4444', padding: '20px', borderRadius: '8px', marginBottom: '30px', border: '1px solid rgba(255, 68, 68, 0.3)', textAlign: 'center' }}>
                                 Başvurunuz gönderilirken bir hata oluştu. Lütfen eksik bilgi girmeden tekrar deneyin veya bizimle iletişime geçin.
@@ -280,6 +318,7 @@ export default function BasvurularSayfasi() {
                             </button>
                         </div>
                     </motion.form>
+                    </div>
                 </div>
             </section>
         </div>
